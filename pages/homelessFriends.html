@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sant Egidio</title>
+
+
+    <!-- materialize icons, css & js -->
+    <link type="text/css" href="../css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" href="../css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+</head>
+<body class="teal lighten-5">
+
+    <!-- top nav -->
+    <img src="../img/EdigioLogo.png" class="logoDetail">
+    <nav class="z-depth-0">
+        <div class="nav-wrapper container">
+            <span class="left white-text text-darken-1">
+                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+            </span>
+
+
+        </div>
+    </nav>
+
+    <!-- side nav -->
+    <ul id="side-menu" class="sidenav side-menu">
+        <img src="../img/EdigioLogo.png" class="logoDetail">
+        <li><a class="subheader">Sant'Egidio</a></li>
+        <li><a href="../pages/homelessFriends.html" class="waves-effect">Seznam kamaradù na ulici</a></li>
+        <li><a href="../pages/warehouse.html" class="waves-effect">Sklad</a></li>
+        <li><a href="../pages/actionforhomeless.html" class="waves-effect">Akce pro chudé</a></li>
+        <li><a href="../pages/occupance.html" class="waves-effect">Zaøízení</a></li>
+        <li><a href="../pages/aboutCRSR.html" class="waves-effect">Egidio v ÈR a SR</a></li>
+        <li><a href="../pages/about.html" class="waves-effect">O Sant'Egidiu</a></li>
+        <li><a href="../pages/synchronize.html" class="waves-effect">Synchronizovat data</a></li>
+        <li><a href="../pages/upload.html" class="waves-effect">Vložení dat</a></li>
+        <li><a href="../pages/download.html" class="waves-effect"></a></li>
+    </ul>
+
+    <!-- contacts -->
+    <div class="contacts container grey-text text-darken-1">
+        <!-- <div class="card-panel contact teal lighten-4 row">
+          <img src="img/pkcontacts.png" alt="contact thumb">
+          <div class="contact-details">
+            <div class="contact-title">John Doe</div>
+            <div class="contact-numbers">+130902092309</div>
+          </div>
+          <div class="contact-options">
+            <i class="material-icons call_out">call_outline</i>
+            <i class="material-icons">delete_outline</i>
+          </div>
+        </div>     -->
+        <div class="white-text text-darken-1 pk-contact">
+            <div class="contact-image">
+                <img src="../img/EdigioLogo.png" alt="contact thumb">
+            </div>
+            <div class="contact-details">
+                <div class="contact-title">John Doe</div>
+                <div class="contact-numbers">+130902092309</div>
+            </div>
+            <div class="contact-options">
+                <i class="material-icons">edit</i>
+                <i class="material-icons">delete</i>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+
+    <!-- add contact side nav -->
+    <div id="side-form" class="sidenav side-form">
+        <form class="add-contact container section">
+            <h6>Pøidat kamaráda</h6>
+            <div class="divider"></div>
+            <div class="input-field">
+                <input placeholder="" id="title" type="text" class="validate">
+                <label for="title">Jméno</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="e.g. +198392323" id="numbers" type="text" class="validate">
+                <label for="numbers">Pøíjmení</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="e.g. John Doe" id="title" type="text" class="validate">
+                <label for="title">Pøíbìh</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="e.g. John Doe" id="title" type="text" class="validate">
+                <label for="title">Vìk</label>
+            </div>
+            <div class="input-field center">
+                <button class="btn-small">Pøidat</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/common.js"></script>
+</body>
+</html>
