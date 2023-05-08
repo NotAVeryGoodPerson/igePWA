@@ -1,4 +1,6 @@
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +12,12 @@
     <link type="text/css" href="../css/materialize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" href="../css/styles.css" rel="stylesheet">
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+     <script src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script> -->
     <script type="text/javascript" src="../js/materialize.min.js"></script>
 
 </head>
+
 <body class="teal lighten-5">
 
     <!-- top nav -->
@@ -31,42 +36,24 @@
     <ul id="side-menu" class="sidenav side-menu">
         <img src="../img/EdigioLogo.png" class="logoDetail">
         <li><a class="subheader">Sant'Egidio</a></li>
-        <li><a href="../pages/homelessFriends.html" class="waves-effect">Seznam kamaradù na ulici</a></li>
+        <li><a href="../pages/homelessFriends.html" class="waves-effect">Seznam kamaradÅ¯ na ulici</a></li>
         <li><a href="../pages/warehouse.html" class="waves-effect">Sklad</a></li>
-        <li><a href="../pages/actionforhomeless.html" class="waves-effect">Akce pro chudé</a></li>
-        <li><a href="../pages/occupance.html" class="waves-effect">Zaøízení</a></li>
-        <li><a href="../pages/aboutCRSR.html" class="waves-effect">Egidio v ÈR a SR</a></li>
+        <li><a href="../pages/actionforhomeless.html" class="waves-effect">Akce pro chudÃ©</a></li>
+        <li><a href="../pages/occupance.html" class="waves-effect">ZaÅ™Ã­zenÃ­</a></li>
+        <li><a href="../pages/aboutCRSR.html" class="waves-effect">Egidio v ÄŒR</a></li>
         <li><a href="../pages/about.html" class="waves-effect">O Sant'Egidiu</a></li>
         <li><a href="../pages/synchronize.html" class="waves-effect">Synchronizovat data</a></li>
-        <li><a href="../pages/upload.html" class="waves-effect">Vložení dat</a></li>
-        <li><a href="../pages/download.html" class="waves-effect"></a></li>
+        <li><a href="../pages/upload.html" class="waves-effect">VloÅ¾enÃ­ dat</a></li>
+        <li><a href="../pages/download.html" class="waves-effect">StaÅ¾enÃ­ dat</a></li>
     </ul>
 
     <!-- contacts -->
-    <div class="contacts container grey-text text-darken-1">
-        <!-- <div class="card-panel contact teal lighten-4 row">
-          <img src="img/pkcontacts.png" alt="contact thumb">
-          <div class="contact-details">
-            <div class="contact-title">John Doe</div>
-            <div class="contact-numbers">+130902092309</div>
-          </div>
-          <div class="contact-options">
-            <i class="material-icons call_out">call_outline</i>
-            <i class="material-icons">delete_outline</i>
-          </div>
-        </div>     -->
-        <div class="white-text text-darken-1 pk-contact">
-            <div class="contact-image">
-                <img src="../img/EdigioLogo.png" alt="contact thumb">
-            </div>
-            <div class="contact-details">
-                <div class="contact-title">John Doe</div>
-                <div class="contact-numbers">+130902092309</div>
-            </div>
-            <div class="contact-options">
-                <i class="material-icons">edit</i>
-                <i class="material-icons">delete</i>
-            </div>
+    <div class="contacts container black-text text-darken-1" id="getData">
+
+        <div class="white-text text-darken-1 pk-contact" id="dataTbl">
+
+
+
         </div>
     </div>
 
@@ -78,31 +65,114 @@
 
     <!-- add contact side nav -->
     <div id="side-form" class="sidenav side-form">
-        <form class="add-contact container section">
-            <h6>Pøidat kamaráda</h6>
+        <form class="add-contact container section" id="addHomelessFriendForm">
+            <div class="alert">KamarÃ¡d byl pÅ™idÃ¡n</div>
+            <h6>PÅ™idat kamarÃ¡da</h6>
             <div class="divider"></div>
             <div class="input-field">
-                <input placeholder="" id="title" type="text" class="validate">
-                <label for="title">Jméno</label>
+                <input placeholder="" id="name" type="text" class="validate">
+                <label for="title">JmÃ©no</label>
             </div>
             <div class="input-field">
-                <input placeholder="e.g. +198392323" id="numbers" type="text" class="validate">
-                <label for="numbers">Pøíjmení</label>
+                <input placeholder="" id="lastname" type="text" class="validate">
+                <label for="numbers">PÅ™Ã­jmenÃ­</label>
             </div>
             <div class="input-field">
-                <input placeholder="e.g. John Doe" id="title" type="text" class="validate">
-                <label for="title">Pøíbìh</label>
+                <input placeholder="" id="nickname" type="text" class="validate">
+                <label for="numbers">PÅ™ezdÃ­vka</label>
             </div>
             <div class="input-field">
-                <input placeholder="e.g. John Doe" id="title" type="text" class="validate">
-                <label for="title">Vìk</label>
+                <input placeholder="" id="story" type="text" class="validate">
+                <label for="title">PÅ™Ã­bÄ›h</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="" id="age" type="text" class="validate">
+                <label for="title">VÄ›k</label>
             </div>
             <div class="input-field center">
-                <button class="btn-small">Pøidat</button>
+                <button class="btn-small" type="submit" id="submit">PÅ™idat</button>
             </div>
         </form>
     </div>
 
-    <script src="../js/common.js"></script>
+
+
+
+
 </body>
 </html>
+<script src="../js/common.js"></script>
+<!---><script src="../js/configDB.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+    import { getDatabase, set, ref, push, child, onValue } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyDzWwd79N9reazofPCxHMZJ9WBqe13-zS0",
+        authDomain: "dige-690af.firebaseapp.com",
+        databaseURL: "https://dige-690af-default-rtdb.firebaseio.com",
+        projectId: "dige-690af",
+        storageBucket: "dige-690af.appspot.com",
+        messagingSenderId: "275899190998",
+        appId: "1:275899190998:web:a9d3f7ffcdc36472cd0377",
+        measurementId: "G-4FR13908D5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+
+    submit.addEventListener('click', (e) => {
+        var name = document.getElementById('name').value;
+        var lastName = document.getElementById('lastname').value;
+        var nickname = document.getElementById('nickname').value;
+        var story = document.getElementById("story").value
+        var age = document.getElementById("age").value
+
+        const userId = push(child(ref(database), 'addHomelessFriendForm')).key;
+
+        set(ref(database, 'addHomelessFriendForm/' + userId), {
+            name: name,
+            lastName: lastName,
+            nickname: nickname,
+            story: story,
+            age: age
+        });
+        alert('saved');
+    });
+
+    // read data
+    getData.addEventListener('load' (e) => {
+
+        $('#dataTbl tr').remove();
+        var rowNum = 0;
+        const dbRef = ref(database, 'addHomelessFriendForm/');
+
+        onValue(dbRef, (snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+                const childKey = childSnapshot.key;
+                const childData = childSnapshot.val();
+                // ...
+                rowNum += 1;
+                var row = "<tr><td>" + rowNum + "</td><td>" + childData.name + "</td><td>" + childData.lastName + "</td><td>" + childData.age + "</td></tr>"
+
+                $(row).appendTo('#dataTbl');
+
+            });
+        }, {
+            onlyOnce: true
+        });
+
+
+    });
+</script>
